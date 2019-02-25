@@ -27,7 +27,8 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>DispatcherServlet</servlet-name>
-        <url-pattern>/</url-pattern>
+        <!-- ***进入DispatcherServlet后该部分url与ContextUrl不参与handler的匹配 -->
+        <url-pattern>/mvc/*</url-pattern>
     </servlet-mapping>
 
     <!--Step2.1：首页，可不配置-->

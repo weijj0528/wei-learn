@@ -18,5 +18,6 @@
         <module>spring-aop</module>
         <module>spring-mvc</module>
         <module>java-servlet</module>
+        <module>java-serialize</module>
     </modules>
 </project>

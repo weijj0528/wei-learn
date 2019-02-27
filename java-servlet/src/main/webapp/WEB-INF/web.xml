@@ -4,7 +4,41 @@
 
 <web-app>
     <display-name>Archetype Created Web Application</display-name>
+    <!-- 1、 context-param-->
+    <context-param>
+        <param-name>APP</param-name>
+        <param-value>Servlet</param-value>
+    </context-param>
+    <context-param>
+        <param-name>name</param-name>
+        <param-value>William</param-value>
+    </context-param>
 
+    <!-- 2、 filter-->
+    <filter>
+        <filter-name>Demo</filter-name>
+        <!-- ***说明 可不配置 -->
+        <description>description</description>
+        <filter-class>com.weiun.java.filter.DemoFilter</filter-class>
+        <init-param>
+            <param-name>name</param-name>
+            <param-value>William</param-value>
+        </init-param>
+    </filter>
+    <filter-mapping>
+        <filter-name>Demo</filter-name>
+        <!-- 匹配规则1：Servlet匹配 -->
+        <servlet-name>Demo</servlet-name>
+        <!-- 匹配规则2：URL匹配 -->
+        <!--<url-pattern>/*</url-pattern>-->
+    </filter-mapping>
+
+    <!-- 3、 listener-->
+    <listener>
+        <listener-class>com.weiun.java.listener.DemoListener</listener-class>
+    </listener>
+
+    <!-- 3、 servlet-->
     <servlet>
         <servlet-name>Demo</servlet-name>
         <servlet-class>com.weiun.java.servlet.DemoServlet</servlet-class>

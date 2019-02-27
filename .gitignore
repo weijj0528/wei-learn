@@ -2,6 +2,7 @@
 .idea/
 classes/
 target/
+log/
 *.iml
 *.ser
-
+*.log

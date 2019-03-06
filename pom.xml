@@ -19,5 +19,7 @@
         <module>spring-mvc</module>
         <module>java-servlet</module>
         <module>java-serialize</module>
+        <module>springboot-base</module>
+        <module>springboot-cache</module>
     </modules>
 </project>

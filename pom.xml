@@ -21,5 +21,6 @@
         <module>java-serialize</module>
         <module>springboot-base</module>
         <module>springboot-cache</module>
+        <module>java-guava</module>
     </modules>
 </project>

@@ -15,6 +15,8 @@ public class User implements Serializable {
 
     private Integer age;
 
+    private Double amount;
+
     private Photo avatar;
 
     private Map<Integer, List<Photo>> photoMap;
@@ -22,6 +24,7 @@ public class User implements Serializable {
     public void print() {
         System.out.println("name:" + name);
         System.out.println("age:" + name);
+        System.out.println("amount:" + amount);
         System.out.println("avatar:" + (avatar == null ? "NULL" : avatar.toString()));
         if (photoMap != null) {
             photoMap.keySet().stream().forEach(key -> {
@@ -50,6 +53,14 @@ public class User implements Serializable {
 
     public void setAge(Integer age) {
         this.age = age;
+    }
+
+    public Double getAmount() {
+        return amount;
+    }
+
+    public void setAmount(Double amount) {
+        this.amount = amount;
     }
 
     public Photo getAvatar() {

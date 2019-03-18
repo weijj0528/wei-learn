@@ -19,6 +19,7 @@ public class SerializeUtils {
         User user = new User();
         user.setName("William");
         user.setAge(18);
+        user.setAmount(100D);
 
         Photo avatar = new Photo();
         avatar.setNote("Avatar");

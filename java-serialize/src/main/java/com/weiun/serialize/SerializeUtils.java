@@ -3,10 +3,7 @@ package com.weiun.serialize;
 import com.weiun.serialize.bean.Photo;
 import com.weiun.serialize.bean.User;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * @author William
@@ -20,6 +17,7 @@ public class SerializeUtils {
         user.setName("William");
         user.setAge(18);
         user.setAmount(100D);
+        user.setCtime(new Date());
 
         Photo avatar = new Photo();
         avatar.setNote("Avatar");

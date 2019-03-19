@@ -1,6 +1,7 @@
 package com.weiun.serialize.bean;
 
 import java.io.Serializable;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -18,6 +19,8 @@ public class User implements Serializable {
     private Double amount;
 
     private Photo avatar;
+
+    private Date ctime;
 
     private Map<Integer, List<Photo>> photoMap;
 
@@ -69,6 +72,14 @@ public class User implements Serializable {
 
     public void setAvatar(Photo avatar) {
         this.avatar = avatar;
+    }
+
+    public Date getCtime() {
+        return ctime;
+    }
+
+    public void setCtime(Date ctime) {
+        this.ctime = ctime;
     }
 
     public Map<Integer, List<Photo>> getPhotoMap() {

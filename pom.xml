@@ -23,5 +23,6 @@
         <module>springboot-cache</module>
         <module>java-guava</module>
         <module>java-reflect</module>
+        <module>java-thread</module>
     </modules>
 </project>

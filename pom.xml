@@ -24,5 +24,7 @@
         <module>java-guava</module>
         <module>java-reflect</module>
         <module>java-thread</module>
+        <module>java-base</module>
+        <module>java-io</module>
     </modules>
 </project>

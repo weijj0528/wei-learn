@@ -32,7 +32,7 @@ public class StrTest {
         System.out.println(strings);
         strings = Splitter.on(",").trimResults().splitToList("1,2,   4,3  ,5,");
         System.out.println(strings);
-        strings = Splitter.on(",").trimResults().omitEmptyStrings().splitToList("1,2,   4,3  ,5,");
+        strings = Splitter.on(",").trimResults().omitEmptyStrings().splitToList("1,2,   4 3 ,3  ,5,");
         System.out.println(strings);
 
         String s = CharMatcher.digit().retainFrom("   Wil3li1am2 ");

@@ -26,5 +26,6 @@
         <module>java-thread</module>
         <module>java-base</module>
         <module>java-io</module>
+        <module>java-hutool</module>
     </modules>
 </project>

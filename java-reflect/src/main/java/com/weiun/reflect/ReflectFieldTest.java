@@ -1,6 +1,7 @@
 package com.weiun.reflect;
 
 import java.lang.reflect.Field;
+import java.lang.reflect.Modifier;
 
 /**
  * @author William
@@ -24,6 +25,10 @@ public class ReflectFieldTest {
         Field a = User.class.getField("a");
         a.set(user, "你好");
         System.out.println(User.getA());
+
+        // 静态属性判断
+        boolean aStatic = Modifier.isStatic(a.getModifiers());
+        System.out.println(aStatic);
     }
 
     private static void printField(Field[] declaredFields) {

@@ -1,4 +1,4 @@
-package com.weiun.guava.cache;
+package com.weiun.tools.guava.cache;
 
 import com.google.common.cache.Cache;
 import com.google.common.cache.CacheBuilder;

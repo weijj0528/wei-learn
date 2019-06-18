@@ -1,4 +1,4 @@
-package com.weiun.guava.rateLimiter;
+package com.weiun.tools.guava.rateLimiter;
 
 import com.google.common.util.concurrent.RateLimiter;
 

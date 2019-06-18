@@ -1,4 +1,4 @@
-package com.weiun.guava.str;
+package com.weiun.tools.guava.str;
 
 import com.google.common.base.CharMatcher;
 import com.google.common.base.Joiner;

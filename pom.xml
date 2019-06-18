@@ -27,5 +27,8 @@
         <module>java-base</module>
         <module>java-io</module>
         <module>java-hutool</module>
+        <module>java-jdbc</module>
+        <module>java-jdbc</module>
+        <module>java-tools</module>
     </modules>
 </project>

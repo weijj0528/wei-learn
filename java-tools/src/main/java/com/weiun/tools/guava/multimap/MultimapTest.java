@@ -1,4 +1,4 @@
-package com.weiun.guava.multimap;
+package com.weiun.tools.guava.multimap;
 
 import com.google.common.collect.*;
 

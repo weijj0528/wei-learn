@@ -237,8 +237,9 @@ public class JdbcTest {
      * PreperedStatement与Statement用法基本一致
      * 不同之处在于
      * 1、PreperedStatement可以使得SQL预编译以提高效率
-     * 2、PreperedStatement对于sql中的参数，允许使用占位符的形式进行替换，起到防止SQl注入问题
-     * 3、SQL注入问题演示 {@link #sqlInjectionTest()}
+     * 2、PreperedStatement对于sql中的参数，允许使用占位符的形式进行替换，简化SQL编写，还起到防止SQl注入问题
+     * 3、批处理时只能处理一类SQL语句，而Statement可以发送任意SQL语句
+     * 4、SQL注入问题演示 {@link #sqlInjectionTest()}
      *
      * @throws SQLException
      */

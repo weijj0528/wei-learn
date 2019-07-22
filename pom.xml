@@ -27,5 +27,6 @@
         <module>java-io</module>
         <module>java-jdbc</module>
         <module>java-tools</module>
+        <module>spring-ioc</module>
     </modules>
 </project>

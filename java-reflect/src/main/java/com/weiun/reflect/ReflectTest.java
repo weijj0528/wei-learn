@@ -1,7 +1,5 @@
 package com.weiun.reflect;
 
-import java.lang.reflect.Field;
-import java.lang.reflect.Method;
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 
@@ -24,20 +22,6 @@ public class ReflectTest {
         Type[] actualTypeArguments = parameterizedType.getActualTypeArguments();
         System.out.println(actualTypeArguments[0]);
         System.out.println(genericSuperclass);
-        /**构造函数相关*/
-        // 获取构造函数public类型
-        clazz.getConstructors();
-        // 获取构造函数 可获取private protected public类型的
-        clazz.getDeclaredConstructors();
-
-        /**方法相关*/
-        Method[] methods = clazz.getMethods();
-        Method[] declaredMethods = clazz.getDeclaredMethods();
-        Method enclosingMethod = clazz.getEnclosingMethod();
-
-        /**属性相关*/
-        Field[] fields = clazz.getFields();
-        Field[] declaredFields = clazz.getDeclaredFields();
     }
 
 

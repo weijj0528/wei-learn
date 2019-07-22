@@ -7,11 +7,45 @@ package com.weiun.reflect.bean;
  */
 public class People<T> implements Action {
 
+    public static final String PUBLIC_PEOPLE = "PUBLIC_PEOPLE";
+
+    private static final String PRIVATE_PEOPLE = "PRIVATE_PEOPLE";
+
+    public String a;
+
+    private String b;
+
+
     public People() {
     }
 
-    public void say() {
-        System.out.println("Hello world!");
+    @Override
+    public void sya(String content) {
+        System.out.println("From People:" + content);
     }
 
+    public static void testPeopleStaticMetodh() {
+    }
+
+    private static void testPeoplePriveteStaticMetodh() {
+    }
+
+    public String getA() {
+        return a;
+    }
+
+    public void setA(String a) {
+        this.a = a;
+    }
+
+    public String getB() {
+        return b;
+    }
+
+    public void setB(String b) {
+        this.b = b;
+    }
+
+    private void testPeoplePriveteMethod() {
+    }
 }

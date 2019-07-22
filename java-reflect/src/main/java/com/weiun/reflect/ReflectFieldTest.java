@@ -1,12 +1,14 @@
 package com.weiun.reflect;
 
+import com.weiun.reflect.bean.User;
+
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
 
 /**
  * @author William
  * @Date 2019/3/19
- * @Description https://mp.weixin.qq.com/s?src=11&timestamp=1553052851&ver=1495&signature=EE1DKExrbNksPgto-khqr*bmUCZKGV-Tcrvoy93fX5arcWPaPavYwLBnc6RfDa750FRrCLdWlebktbpwht0tr4IIDPz1siM3OoxRGVv5-r5kavxY193YJ31*6-GP4GDh&new=1
+ * @Description 反射属性操作
  */
 public class ReflectFieldTest {
 
@@ -24,7 +26,7 @@ public class ReflectFieldTest {
         User user = new User();
         Field a = User.class.getField("a");
         a.set(user, "你好");
-        System.out.println(User.getA());
+        System.out.println(user.getAge());
 
         // 静态属性判断
         boolean aStatic = Modifier.isStatic(a.getModifiers());
@@ -36,43 +38,5 @@ public class ReflectFieldTest {
             Class<?> type = field.getType();
             System.out.println(field.getName() + " type " + type.getName());
         }
-    }
-
-    public static class User extends People {
-
-        public static String a;
-
-        private static int b;
-
-        public String c;
-
-        private boolean d;
-
-        private int[] e = null;
-
-        private boolean[] f = null;
-
-        public static String getA() {
-            return a;
-        }
-
-        public static void setA(String a) {
-            User.a = a;
-        }
-    }
-
-    public static class People {
-
-        public static String a1;
-
-        private static int b1;
-
-        public String c1;
-
-        private boolean d1;
-
-        private int[] e1 = null;
-
-        private boolean[] f1 = null;
     }
 }

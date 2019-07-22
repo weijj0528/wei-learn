@@ -8,24 +8,30 @@ package com.weiun.reflect.bean;
 @Deprecated
 public class User extends People<User> {
 
-    public static int TYPE_GOOD = 1;
+    public static int PUBLIC_USER = 1;
 
-    private static String TYPE_BAD = "0";
+    private static String PRIVATE_USER = "0";
 
     public String name;
 
     private int age;
 
-    private User() {
+    public User() {
     }
 
-    public User(String name) {
+    private User(String name) {
         this.name = name;
     }
 
     public User(String name, int age) {
         this.name = name;
         this.age = age;
+    }
+
+    public static void testUserStaticMethod() {
+    }
+
+    private static void testUserPriveteStaticMethod() {
     }
 
     public String getName() {
@@ -42,5 +48,8 @@ public class User extends People<User> {
 
     public void setAge(int age) {
         this.age = age;
+    }
+
+    private void testUserPrivateMethod() {
     }
 }

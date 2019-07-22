@@ -6,4 +6,9 @@ package com.weiun.reflect.bean;
  * @Description
  */
 public interface Action {
+
+    public static final String Action = "Action";
+
+    void sya(String content);
+
 }

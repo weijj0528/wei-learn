@@ -28,5 +28,6 @@
         <module>java-jdbc</module>
         <module>java-tools</module>
         <module>spring-ioc</module>
+        <module>java-proxy</module>
     </modules>
 </project>

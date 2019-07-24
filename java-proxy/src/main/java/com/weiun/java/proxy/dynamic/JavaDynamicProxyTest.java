@@ -26,7 +26,7 @@ public class JavaDynamicProxyTest {
             @Override
             public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
                 System.out.println("Proxy:开始保存！");
-                userDao.save();
+                method.invoke(userDao,args);
                 System.out.println("Proxy:保存结束！");
                 return null;
             }

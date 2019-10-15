@@ -29,5 +29,6 @@
         <module>java-tools</module>
         <module>spring-ioc</module>
         <module>java-proxy</module>
+        <module>java-swing</module>
     </modules>
 </project>

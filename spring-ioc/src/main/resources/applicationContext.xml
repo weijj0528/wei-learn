@@ -8,4 +8,7 @@
         <constructor-arg name="age" value="20"></constructor-arg>
     </bean>
 
+    <bean class="com.weiun.spring.ioc.bean.PostService">
+
+    </bean>
 </beans>

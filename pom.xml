@@ -21,6 +21,7 @@
         <module>java-serialize</module>
         <module>springboot-base</module>
         <module>springboot-cache</module>
+        <module>springboot-security</module>
         <module>java-reflect</module>
         <module>java-thread</module>
         <module>java-base</module>

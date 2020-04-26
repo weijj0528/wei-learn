@@ -9,9 +9,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.weiun</groupId>
-    <artifactId>spring-security</artifactId>
+    <artifactId>springboot-security</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>spring-security</name>
+    <name>springboot-security</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>

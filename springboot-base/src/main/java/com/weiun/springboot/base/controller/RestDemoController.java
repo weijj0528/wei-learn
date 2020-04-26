@@ -2,9 +2,7 @@ package com.weiun.springboot.base.controller;
 
 import com.weiun.springboot.base.bean.Response;
 import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @author William
@@ -20,8 +18,8 @@ public class RestDemoController {
         return "Hello world!";
     }
 
-    @GetMapping(value = "/json", produces = MediaType.APPLICATION_JSON_VALUE)
-    public Response jsonResponse() {
+    @RequestMapping(value = {"/json/{id}", "/jjson/{id}"}, method = {RequestMethod.GET, RequestMethod.POST}, produces = MediaType.APPLICATION_JSON_VALUE)
+    public Response jsonResponse(@PathVariable("id") String id) {
         return new Response();
     }
 

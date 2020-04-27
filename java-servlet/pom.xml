@@ -12,7 +12,7 @@
     <artifactId>java-servlet</artifactId>
     <packaging>war</packaging>
 
-    <name>java-servlet Maven Webapp</name>
+    <name>java-servlet</name>
     <!-- FIXME change it to the project's website -->
     <url>http://www.example.com</url>
 

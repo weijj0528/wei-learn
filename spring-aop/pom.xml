@@ -12,7 +12,7 @@
     <artifactId>spring-aop</artifactId>
     <packaging>war</packaging>
 
-    <name>spring-aop Maven Webapp</name>
+    <name>spring-aop</name>
     <!-- FIXME change it to the project's website -->
     <url>http://www.example.com</url>
 

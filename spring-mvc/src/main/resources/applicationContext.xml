@@ -6,6 +6,12 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
     <!--Step4：Spring配置-->
+    <!--  非注解方式配置处理器  -->
+    <bean name="/one" class="com.weiun.spring.mvc.controller.OneController"/>
+    <bean name="/second" class="com.weiun.spring.mvc.controller.SecondController"/>
+    <bean name="/third" class="com.weiun.spring.mvc.controller.ThirdController">
+        <property name="cacheSeconds" value="0"/>
+    </bean>
 
     <!-- *开启注解扫描-->
     <context:annotation-config/>

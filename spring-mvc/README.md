@@ -20,6 +20,19 @@
         <artifactId>jackson-databind</artifactId>
         <version>2.9.8</version>
     </dependency>
+    <!-- servlet -->
+    <dependency>
+        <groupId>javax.servlet</groupId>
+        <artifactId>javax.servlet-api</artifactId>
+        <version>3.1.0</version>
+        <scope>provided</scope>
+    </dependency>
+    <dependency>
+        <groupId>javax.servlet</groupId>
+        <artifactId>jstl</artifactId>
+        <version>1.2</version>
+        <scope>provided</scope>
+    </dependency>
 </dependencies>
 ```
 2. web.xml配置
@@ -69,7 +82,13 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
     <!--Step4：Spring配置-->
-
+    <!--  非注解方式配置处理器  -->
+    <bean name="/one" class="com.weiun.spring.mvc.controller.OneController"/>
+    <bean name="/second" class="com.weiun.spring.mvc.controller.SecondController"/>
+    <bean name="/third" class="com.weiun.spring.mvc.controller.ThirdController">
+        <property name="cacheSeconds" value="0"/>
+    </bean>
+    
     <!-- *开启注解扫描-->
     <context:annotation-config/>
     <!-- *组件扫描的包路径-->
@@ -119,7 +138,58 @@
 
 </beans>
 ```
+#### Spring五种处理器的配置
+1. OneController
+
+实现HttpRequestHandler#handleRequest接口方法，该种方法需要在Spring配置文件中配置其请求路径
+```java
+public class OneController implements HttpRequestHandler {
+
+    @Override
+    public void handleRequest(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        response.getWriter().write("Hello One!");
+    }
+}
+```
+```xml
+<bean name="/one" class="com.weiun.spring.mvc.controller.OneController"/>
+```
+2. SecondController
+   
+实现Controller#handleRequest接口方法，该种方法同样需要在Spring配置文件中配置其请求路径
+```java
+public class SecondController implements Controller {
+    @Override
+    public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
+        response.getWriter().write("Hello Second!");
+        return null;
+    }
+}
+```
+```xml
+<bean name="/second" class="com.weiun.spring.mvc.controller.SecondController"/>
+```
+3. ThirdController
+   
+继承 AbstractController并实现handleRequestInternal抽象方法，该种方法为方法2扩展，增加了多种配置项同样需要在Spring配置文件中配置其请求路径
+```java
+public class ThirdController extends AbstractController {
+    @Override
+    protected ModelAndView handleRequestInternal(HttpServletRequest request, HttpServletResponse response) throws Exception {
+        response.getWriter().write("Hello Third!");
+        return null;
+    }
+}
+```
+```xml
+<bean name="/third" class="com.weiun.spring.mvc.controller.ThirdController">
+    <property name="cacheSeconds" value="0"/>
+</bean>
+```
 4. DemoController
+
+通过@Controller，@RequestMapping配置某一方法为处理器，也是目前主流的使用方法，需要在配置文件中开启注解扫描，并确保注解的类能能够被扫描到
+
 ```java
 @Controller
 @RequestMapping("/demo")
@@ -133,12 +203,20 @@ public class DemoController {
 
 }
 ```
+```xml
+<!-- *开启注解扫描-->
+<context:annotation-config/>
+<!-- *组件扫描的包路径-->
+<context:component-scan base-package="com.weiun.spring.mvc.controller"/>
+```
 5. RestDemoController
+
+通过@RestController注解已支持Rest，该种方法扩展于 @Controller 同 @Controller + @ResponseBody方式不用进行视图的渲染
+
 ```java
 @RestController
 @RequestMapping("rest")
 public class RestDemoController {
-
     @GetMapping("/hello")
     public Map<String, String> hello() {
         Map<String, String> map = new HashMap<>(8);
@@ -149,6 +227,9 @@ public class RestDemoController {
 }
 ```
 启动应用访问（ 注意端口与ContextUrl的配置）
-- http://localhost:8080/demo/hello
-- http://localhost:8080/rest/hello
+- http://localhost:8080/mvc/one
+- http://localhost:8080/mvc/second
+- http://localhost:8080/mvc/third
+- http://localhost:8080/mvc/four/hello
+- http://localhost:8080/mvc/five/hello
 

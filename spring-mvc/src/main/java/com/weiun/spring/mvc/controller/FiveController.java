@@ -14,7 +14,7 @@ import java.util.Map;
  */
 @RestController
 @RequestMapping("rest")
-public class RestDemoController {
+public class FiveController {
 
     @GetMapping("/hello")
     public Map<String, String> hello() {

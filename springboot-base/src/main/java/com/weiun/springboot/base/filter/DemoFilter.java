@@ -12,10 +12,10 @@ import java.io.IOException;
  * @Date 2019/2/27
  * @Description
  */
-@Component
-@ServletComponentScan
+
 @WebFilter(urlPatterns = "/*", filterName = "testFilter")
 public class DemoFilter implements Filter {
+
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
         Object name = filterConfig.getServletContext().getInitParameter("name");

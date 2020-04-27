@@ -2,6 +2,7 @@ package com.weiun.springboot.base.config;
 
 import com.weiun.springboot.base.interceptor.DemoInterceptor;
 import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.context.ApplicationEvent;
@@ -19,9 +20,12 @@ public class WebMvcConfig implements WebMvcConfigurer, ApplicationContextAware {
 
     private static ApplicationContext context = null;
 
+    @Autowired
+    private DemoInterceptor demoInterceptor;
+
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(new DemoInterceptor()).order(1);
+        registry.addInterceptor(demoInterceptor).order(1);
     }
 
     @Override

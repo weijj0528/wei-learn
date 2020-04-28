@@ -7,11 +7,14 @@
 
     <!--Step4：Spring配置-->
     <!--  非注解方式配置处理器  -->
+    <bean name="/zero" class="com.weiun.spring.mvc.controller.ZeroController"/>
     <bean name="/one" class="com.weiun.spring.mvc.controller.OneController"/>
     <bean name="/second" class="com.weiun.spring.mvc.controller.SecondController"/>
     <bean name="/third" class="com.weiun.spring.mvc.controller.ThirdController">
         <property name="cacheSeconds" value="0"/>
     </bean>
+    <!-- 原生Servlet处理适配器 -->
+    <bean class="org.springframework.web.servlet.handler.SimpleServletHandlerAdapter"/>
 
     <!-- *开启注解扫描-->
     <context:annotation-config/>

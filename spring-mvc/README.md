@@ -138,7 +138,25 @@
 
 </beans>
 ```
-#### Spring五种处理器的配置
+#### Spring六种处理器的配置
+0. ZeroController
+
+原生Servlet的支持，可继承HttpServlet或实现Servlet接口，该种方法需要在Spring配置文件中配置其请求路径并配置处理适配器
+```java
+public class OneController implements HttpRequestHandler {
+
+    @Override
+    public void handleRequest(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        response.getWriter().write("Hello One!");
+    }
+}
+```
+```xml
+<bean name="/one" class="com.weiun.spring.mvc.controller.OneController"/>
+<!-- 原生Servlet处理适配器 -->
+<bean class="org.springframework.web.servlet.handler.SimpleServletHandlerAdapter"/>
+```
+
 1. OneController
 
 实现HttpRequestHandler#handleRequest接口方法，该种方法需要在Spring配置文件中配置其请求路径

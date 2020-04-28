@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * @Description Demo
  */
 @Controller
-@RequestMapping("/demo")
+@RequestMapping("/four")
 public class FourController {
 
     @RequestMapping("/hello")

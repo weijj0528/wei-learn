@@ -13,7 +13,7 @@ import java.util.Map;
  * @Description Rest
  */
 @RestController
-@RequestMapping("rest")
+@RequestMapping("five")
 public class FiveController {
 
     @GetMapping("/hello")

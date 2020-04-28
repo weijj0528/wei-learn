@@ -16,7 +16,18 @@
     <!-- *开启注解扫描-->
     <context:annotation-config/>
     <!-- *组件扫描的包路径-->
-    <context:component-scan base-package="com.weiun.spring.mvc.controller"/>
+    <context:component-scan base-package="com.weiun.spring.mvc">
+        <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+        <context:include-filter type="annotation" expression="org.springframework.web.bind.annotation.RestController"/>
+    </context:component-scan>
+
+    <!--  拦截器配置  -->
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/**"/>
+            <ref bean="oneInterceptor"/>
+        </mvc:interceptor>
+    </mvc:interceptors>
 
     <!-- 如需要返回JSON格式响应，需要配置转换器，默认使用Jackson，可配置其他转换器，如Fastjson-->
     <mvc:annotation-driven>

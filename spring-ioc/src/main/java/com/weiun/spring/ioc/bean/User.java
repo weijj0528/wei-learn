@@ -38,6 +38,14 @@ public class User implements InitializingBean, DisposableBean {
                 '}';
     }
 
+    public void init(){
+        System.out.println("Init");
+    }
+
+    public void finish(){
+        System.out.println("Finish");
+    }
+
     @Override
     public void afterPropertiesSet() throws Exception {
         System.out.println("afterPropertiesSet");

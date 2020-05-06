@@ -3,8 +3,9 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean class="com.weiun.spring.ioc.bean.PostService"/>
+    <bean class="com.weiun.spring.ioc.bean.User" init-method="init" destroy-method="finish">
+        <constructor-arg name="name" value="Weiun"/>
+        <constructor-arg name="age" value="20"/>
+    </bean>
 
-    <!-- 引入其他配置文件 -->
-    <import resource="other.xml"/>
 </beans>

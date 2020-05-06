@@ -11,7 +11,7 @@ public class Application01 {
 
     /**
      * The entry point of application.
-     * Spring IOC容器的基本使用
+     * 基于XML配置文件的Spring IOC容器的基本使用
      * 1、容器的初始化{@link Application01#initIoc}
      * 2、Bean的获取{@link AbstractApplicationContext#getBean}
      *

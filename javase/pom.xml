@@ -16,6 +16,7 @@
     <modules>
         <module>java-base</module>
         <module>java-io</module>
+        <module>java-lambda</module>
         <module>java-proxy</module>
         <module>java-reflect</module>
         <module>java-serialize</module>

@@ -4,8 +4,8 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <bean class="com.weiun.spring.ioc.bean.User" init-method="init" destroy-method="finish">
-        <constructor-arg name="name" value="Weiun"/>
-        <constructor-arg name="age" value="20"/>
+        <constructor-arg name="name" value="${name}"/>
+        <constructor-arg name="age" value="${age}"/>
     </bean>
 
 </beans>

@@ -11,7 +11,7 @@ import org.springframework.core.io.ClassPathResource;
 public class Factory01 {
 
     public static void main(String[] args) {
-        ClassPathResource resource = new ClassPathResource("applicationContext.xml");
+        ClassPathResource resource = new ClassPathResource("factory.xml");
         DefaultListableBeanFactory factory = new DefaultListableBeanFactory();
         XmlBeanDefinitionReader reader = new XmlBeanDefinitionReader(factory);
         reader.loadBeanDefinitions(resource);

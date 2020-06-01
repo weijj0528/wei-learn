@@ -10,18 +10,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>spring-ioc</artifactId>
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <configuration>
-                    <source>6</source>
-                    <target>6</target>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
+    <packaging>jar</packaging>
+
+    <name>spring-ioc</name>
+    <!-- FIXME change it to the project's website -->
+    <url>http://www.example.com</url>
 
     <dependencies>
         <!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc -->
@@ -38,4 +31,5 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
+
 </project>

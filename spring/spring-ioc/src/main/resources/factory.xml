@@ -5,6 +5,8 @@
 
     <bean class="com.weiun.spring.ioc.bean.PostService"/>
 
-    <!-- 引入其他配置文件 -->
-    <import resource="other.xml"/>
+    <bean class="com.weiun.spring.ioc.bean.User" init-method="init" destroy-method="finish">
+        <constructor-arg name="name" value="weiun"/>
+        <constructor-arg name="age" value="19"/>
+    </bean>
 </beans>

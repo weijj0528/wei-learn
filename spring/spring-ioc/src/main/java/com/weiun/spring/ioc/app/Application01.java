@@ -21,6 +21,8 @@ public class Application01 {
         ClassPathXmlApplicationContext context = initIoc();
         User user = context.getBean(User.class);
         System.out.println(user.getName());
+
+
         context.close();
     }
 
@@ -43,7 +45,7 @@ public class Application01 {
      * @return
      */
     private static ClassPathXmlApplicationContext initIoc() {
-        return new ClassPathXmlApplicationContext("classpath:/applicationContext.xml");
+        return new ClassPathXmlApplicationContext("classpath:/applicationContext01.xml");
     }
 
 }

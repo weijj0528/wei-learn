@@ -11,6 +11,8 @@ import java.util.Scanner;
 
 public class NioClient {
 
+    private static boolean flag = true;
+
     public static void main(String[] args) throws Exception {
         SocketChannel socketChannel = SocketChannel.open();
         socketChannel.configureBlocking(false);
@@ -18,7 +20,7 @@ public class NioClient {
         socketChannel.register(selector, SelectionKey.OP_CONNECT);
         InetSocketAddress address = new InetSocketAddress("localhost", 8080);
         socketChannel.connect(address);
-        while (true) {
+        while (flag) {
             int select = selector.select(1000);
             if (select > 0) {
                 Iterator<SelectionKey> iterator = selector.selectedKeys().iterator();
@@ -37,7 +39,7 @@ public class NioClient {
                             new Thread(() -> {
                                 Scanner scanner = new Scanner(System.in);
                                 scanner.useDelimiter("\n");
-                                while (true) {
+                                while (flag) {
                                     try {
                                         String msg = scanner.nextLine();
                                         byteBuffer.clear();
@@ -56,7 +58,12 @@ public class NioClient {
                         buffer.clear();
                         channel.read(buffer);
                         buffer.flip();
-                        System.out.println(new String(buffer.array()));
+                        String x = new String(buffer.array());
+                        System.out.println(x);
+                        if (x.contains("Close")) {
+                            flag = false;
+                            break;
+                        }
                     }
                     iterator.remove();
                 }

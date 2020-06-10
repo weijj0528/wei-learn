@@ -17,5 +17,6 @@
         <module>java-jdbc</module>
         <module>java-servlet</module>
         <module>java-tools</module>
+        <module>java-reactor</module>
     </modules>
 </project>

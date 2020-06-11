@@ -29,6 +29,7 @@
         <module>springboot-base</module>
         <module>springboot-cache</module>
         <module>springboot-security</module>
+        <module>springboot-websocket</module>
     </modules>
 
     <build>

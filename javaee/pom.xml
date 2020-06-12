@@ -18,5 +18,6 @@
         <module>java-servlet</module>
         <module>java-tools</module>
         <module>java-reactor</module>
+        <module>java-lucene</module>
     </modules>
 </project>

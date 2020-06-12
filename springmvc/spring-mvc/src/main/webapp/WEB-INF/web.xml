@@ -9,10 +9,15 @@
         *Spring配置，与SpringMVC的区别，建议直接使用SpringMVC配置文件
         如使用该配置需要注意注解的扫描范围，不要有交集，
     -->
-    <!--<context-param>
+    <context-param>
         <param-name>contextConfigLocation</param-name>
         <param-value>classpath:applicationContext.xml</param-value>
-    </context-param>-->
+    </context-param>
+
+    <!-- 初始化一个Root Spring WebApplicationContext 容器 -->
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
 
     <!--Step2：配置Servlet-->
     <servlet>
@@ -21,7 +26,7 @@
         <!--Step3：创建Servlet配置文件，并设置初始化参数-->
         <init-param>
             <param-name>contextConfigLocation</param-name>
-            <param-value>classpath:applicationContext.xml</param-value>
+            <param-value>classpath:mvc.xml</param-value>
         </init-param>
         <load-on-startup>1</load-on-startup>
     </servlet>

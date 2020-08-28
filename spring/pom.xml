@@ -15,6 +15,7 @@
     <modules>
         <module>spring-aop</module>
         <module>spring-ioc</module>
+        <module>spring-tx</module>
     </modules>
 
 </project>

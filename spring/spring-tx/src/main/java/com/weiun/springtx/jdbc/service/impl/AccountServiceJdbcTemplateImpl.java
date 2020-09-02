@@ -1,6 +1,6 @@
 package com.weiun.springtx.jdbc.service.impl;
 
-import com.weiun.springtx.jdbc.service.AcountService;
+import com.weiun.springtx.jdbc.service.AccountService;
 import com.weiun.springtx.jdbc.entity.Account;
 import com.weiun.springtx.jdbc.mapper.AccountMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +20,7 @@ import java.util.List;
  * MyBatis
  */
 @Service("accountServiceJdbcTemplateImpl")
-public class AccountServiceJdbcTemplateImpl implements AcountService {
+public class AccountServiceJdbcTemplateImpl implements AccountService {
 
     @Autowired
     private JdbcTemplate jdbcTemplate;

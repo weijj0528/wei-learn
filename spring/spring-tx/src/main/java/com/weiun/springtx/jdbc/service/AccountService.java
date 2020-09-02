@@ -1,6 +1,6 @@
 package com.weiun.springtx.jdbc.service;
 
-public interface AcountService {
+public interface AccountService {
 
     /**
      * 转账成功测试

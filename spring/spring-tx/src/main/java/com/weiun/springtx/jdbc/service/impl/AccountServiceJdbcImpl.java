@@ -1,6 +1,6 @@
 package com.weiun.springtx.jdbc.service.impl;
 
-import com.weiun.springtx.jdbc.service.AcountService;
+import com.weiun.springtx.jdbc.service.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -16,7 +16,7 @@ import java.sql.ResultSet;
  *
  */
 @Service("accountServiceJdbcImpl")
-public class AccountServiceJdbcImpl implements AcountService {
+public class AccountServiceJdbcImpl implements AccountService {
 
     @Autowired
     private DataSource dataSource;

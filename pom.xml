@@ -18,8 +18,10 @@
     </properties>
 
     <modules>
-        <module>javase</module>
-        <module>javaee</module>
+        <module>java-lucene</module>
+        <module>java-reactor</module>
+        <module>java-servlet</module>
+        <module>java-tools</module>
         <module>spring</module>
         <module>springmvc</module>
         <module>springboot</module>

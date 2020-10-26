@@ -18,11 +18,6 @@
     </properties>
 
     <modules>
-        <module>java-lucene</module>
-        <module>java-reactor</module>
-        <module>java-servlet</module>
-        <module>java-tools</module>
-        <module>sharding-sphere</module>
         <module>spring</module>
         <module>springboot</module>
         <module>springmvc</module>
